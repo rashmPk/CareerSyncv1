@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title >CareerSync</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+<h1 class="logo-title">
+    <span class="letter logo-c">C</span>
+    <span class="letter">a</span>
+    <span class="letter">r</span>
+    <span class="letter">e</span>
+    <span class="letter">e</span>
+    <span class="letter">r</span>
+    <span class="letter logo-s">S</span>
+    <span class="letter">y</span>
+    <span class="letter">n</span>
+    <span class="letter">c</span>
+</h1>
+
+
+
+
+
+
+
+
+
+
+{% if error %}
+<div class="error-box">
+    {{ error }}
+</div>
+{% endif %}
+
+<form method="POST" enctype="multipart/form-data" class="animated-form" id="jobForm">
+
+    <h3>Enter Skills</h3>
+    <input type="text" id="skillsInput" name="skills" placeholder="e.g. python, machine learning, sql">
+
+    <br><br>
+
+    <h3>OR Upload Resume (PDF)</h3>
+    <input type="file" id="resumeInput" name="resume" accept=".pdf">
+
+    <br><br>
+
+    <button type="submit">Find Jobs</button>
+
+</form>
+
+
+
+
+
+<script>
+const form = document.getElementById("jobForm");
+const skillsInput = document.getElementById("skillsInput");
+const resumeInput = document.getElementById("resumeInput");
+
+function clearError() {
+    const errorBox = document.querySelector(".error-box");
+    if (errorBox) {
+        errorBox.remove();
+    }
+}
+
+form.addEventListener("submit", function(e) {
+    const skillsValue = skillsInput.value.trim();
+    const resumeSelected = resumeInput.files.length > 0;
+
+    if (!skillsValue && !resumeSelected) {
+        e.preventDefault();
+
+        let errorBox = document.querySelector(".error-box");
+
+        if (!errorBox) {
+            errorBox = document.createElement("div");
+            errorBox.className = "error-box";
+            form.parentNode.insertBefore(errorBox, form);
+        }
+
+        errorBox.textContent = "Please upload your resume or enter skills.";
+    }
+});
+
+skillsInput.addEventListener("input", clearError);
+resumeInput.addEventListener("change", clearError);
+</script>
+</body>
+</html>

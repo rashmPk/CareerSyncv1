@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Applied Courses - CareerSync</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="topbar">
+    <div class="topbar-left"><span class="brand">CareerSync</span></div>
+    <div class="topbar-right">
+        <a href="/dashboard">Job Match</a>
+        <a href="/applied-jobs">Applied Jobs</a>
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="page-wrapper">
+    <h1>Applied Courses</h1>
+
+    {% if courses_saved %}
+        {% for course in courses_saved %}
+        <div class="course-card scroll-card">
+            <h3>{{ course['course'] }}</h3>
+            <p><b>Skill:</b> {{ course['skill'] }}</p>
+            <p><b>Platform:</b> {{ course['platform'] }}</p>
+            <a href="{{ course['link'] }}" target="_blank" class="action-btn">Open Course</a>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No applied courses yet.</p>
+    {% endif %}
+</div>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Matches - CareerSync</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="top-navbar">
+    <div class="nav-left">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    </div>
+
+    <div class="nav-center">
+        <img src="{{ url_for('static', filename='careersync_logo.png') }}" alt="CareerSync Logo" class="nav-logo">
+    </div>
+
+    <div class="nav-right">
+        <button class="support-btn">Support</button>
+    </div>
+</div>
+
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+         <img src="{{ url_for('static', filename='careersync_logo.png') }}" class="sidebar-logo">
+        <button class="close-btn" onclick="toggleSidebar()">×</button>
+    </div>
+
+    <a href="/job-matches">Job Match</a>
+    <a href="/applied-jobs">Applied Jobs</a>
+
+    {% if session.get('is_admin') == 1 %}
+    <a href="/admin">Admin</a>
+    {% endif %}
+
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="page-wrapper">
+
+    <div class="skills-section">
+        <div class="job-card skills-card">
+            <h2>Your Skills Detected</h2>
+            {% if user_skills %}
+                <p>{{ user_skills | join(', ') | title }}</p>
+            {% else %}
+                <p style="color:#666;font-size:14px;">
+                    Resume uploaded but no recognizable skills were found.
+                </p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div id="chartData"
+         data-has-detected-skills="{{ 'true' if has_detected_skills else 'false' }}"
+         data-job-titles='{{ job_titles | tojson | safe }}'
+         data-salary-by-role='{{ salary_by_role | tojson | safe }}'
+         hidden>
+    </div>
+
+    <div class="main-container">
+        <div class="left-panel">
+            <div class="analysis-section {% if not has_detected_skills %}disabled-section{% endif %}" id="analysisSection">
+                <h2>Job Match Analysis</h2>
+
+                {% if has_detected_skills and has_job_matches %}
+                    {% for job in results.itertuples() %}
+                    <div class="analysis-card">
+                        <h3 class="job-name">{{ job.title }}</h3>
+
+                        <p><b>Match Score:</b></p>
+                        <progress value="{{ job.match_score*100 }}" max="100"></progress>
+                        <p>{{ (job.match_score*100)|round(2) }}%</p>
+
+                        {% if job.match_score*100 >= 60 %}
+                            <p style="color:green;"><b>Strong Match</b></p>
+                        {% elif job.match_score*100 >= 30 %}
+                            <p style="color:orange;"><b>Moderate Match</b></p>
+                        {% else %}
+                            <p style="color:red;"><b>Low Match</b></p>
+                        {% endif %}
+
+                        <p><b>Required Skills:</b><br>{{ job.skills | title }}</p>
+
+                        <p><b>Missing Skills:</b><br>
+                            {% if missing_skills[loop.index0] %}
+                                {{ missing_skills[loop.index0] | join(', ') | title }}
+                            {% else %}
+                                None
+                            {% endif %}
+                        </p>
+
+                        <p><b>Recommended Skills To Learn:</b></p>
+
+                        {% if missing_skills[loop.index0] %}
+                            <ul>
+                                {% for skill in missing_skills[loop.index0] %}
+                                    <li>{{ skill | title }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p>No additional skills recommended.</p>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    {% if not has_detected_skills %}
+                        <p class="disabled-message">No matching skills detected.</p>
+                    {% else %}
+                        <p class="disabled-message">No matching jobs found for your skills.</p>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="chart-section {% if not has_detected_skills %}disabled-section{% endif %}">
+                <h2>Job Market Insights</h2>
+
+                {% if has_detected_skills and has_job_matches %}
+                <div class="insight-layout">
+                    <div class="chart-wrapper">
+                        <canvas id="jobChart"></canvas>
+                    </div>
+
+                    <div class="insight-stats">
+                        <div class="stat-box">
+                            <span class="stat-label">Jobs Analyzed</span>
+                            <span class="stat-value">{{ total_jobs }}</span>
+                        </div>
+
+                        <div class="stat-box">
+                            <span class="stat-label">Annual Salary</span>
+                            <span class="stat-value" id="salaryValue">Click a chart segment</span>
+                        </div>
+
+                        <div class="stat-box">
+                            <span class="stat-label">Most In-Demand Role</span>
+                            <span class="stat-value">{{ top_role }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                    <p class="disabled-message">No insights available.</p>
+                {% endif %}
+            </div>
+
+            <div class="openings-section scroll-card {% if not has_detected_skills %}disabled-section{% endif %}">
+                <h2>Recommended Job Openings</h2>
+
+                {% if has_detected_skills and has_job_matches %}
+                    {% for job in openings.itertuples() %}
+                    <div class="opening-card">
+                        <h3>{{ job.title }}</h3>
+                        <p><b>Company:</b> {{ job.company }}</p>
+                        <p><b>Location:</b> {{ job.location }}</p>
+                        <p><b>Required Skills:</b> {{ job.skills | title }}</p>
+
+                        <form method="POST" action="/save-job" target="_blank" class="inline-apply-form">
+                            <input type="hidden" name="title" value="{{ job.title }}">
+                            <input type="hidden" name="company" value="{{ job.company }}">
+                            <input type="hidden" name="location" value="{{ job.location }}">
+                            <input type="hidden" name="apply_link" value="{{ job.apply_link }}">
+                            <button type="submit" class="action-btn">Apply</button>
+                        </form>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="disabled-message">No job openings available.</p>
+                {% endif %}
+            </div>
+
+            <div class="courses-section scroll-card {% if not has_detected_skills %}disabled-section{% endif %}">
+                <h2>Recommended Courses</h2>
+
+                {% if has_detected_skills and has_job_matches and course_recommendations %}
+                    {% for course in course_recommendations %}
+                    <div class="course-card">
+                        <h3>{{ course.course }}</h3>
+                        <p><b>Skill:</b> {{ course.skill | title }}</p>
+                        <p><b>Platform:</b> {{ course.platform }}</p>
+                        <a href="{{ course.link }}" target="_blank" class="action-btn">View Course</a>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="disabled-message">No course recommendations available.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-action">
+        <a href="/dashboard" class="search-again-btn">Search Again</a>
+    </div>
+</div>
+
+<script>
+
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("open");
+}
+
+
+const chartData = document.getElementById("chartData");
+const mainContainer = document.querySelector(".main-container");
+
+const hasDetectedSkills = chartData.dataset.hasDetectedSkills === "true";
+const jobs = JSON.parse(chartData.dataset.jobTitles);
+const salaryByRole = JSON.parse(chartData.dataset.salaryByRole);
+
+if (hasDetectedSkills && jobs.length > 0) {
+    const counts = {};
+
+    jobs.forEach(job => {
+        counts[job] = (counts[job] || 0) + 1;
+    });
+
+    const labels = Object.keys(counts);
+    const data = Object.values(counts);
+
+    const ctx = document.getElementById("jobChart");
+
+    if (ctx) {
+        const jobChart = new Chart(ctx, {
+            type: "doughnut",
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: new Array(data.length).fill(0),
+                    backgroundColor: [
+                        "#264653",
+                        "#2A9D8F",
+                        "#E9C46A",
+                        "#F4A261",
+                        "#E76F51"
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                cutout: "73%",
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: {
+                    duration: 1200,
+                    easing: "easeOutCubic"
+                },
+                onClick: (event, elements) => {
+                    if (elements.length > 0) {
+                        const index = elements[0].index;
+                        const selectedRole = labels[index];
+                        const salary = salaryByRole[selectedRole];
+                        const salaryBox = document.getElementById("salaryValue");
+
+                        if (salaryBox && salary !== undefined) {
+                            salaryBox.textContent = `₹${Number(salary).toLocaleString()}`;
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: "bottom",
+                        align: "center",
+                        labels: {
+                            boxWidth: 10,
+                            boxHeight: 10,
+                            padding: 15,
+                            font: {
+                                size: 12
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        setTimeout(() => {
+            jobChart.data.datasets[0].data = data;
+            jobChart.update();
+        }, 100);
+    }
+}
+
+const analysisSection = document.getElementById("analysisSection");
+
+if (analysisSection && mainContainer) {
+    let timeoutId;
+
+    window.addEventListener("scroll", () => {
+        const containerRect = mainContainer.getBoundingClientRect();
+        const shouldActivate = containerRect.bottom <= window.innerHeight;
+
+        clearTimeout(timeoutId);
+
+        if (shouldActivate) {
+            analysisSection.classList.add("scroll-active");
+        } else {
+            if (analysisSection.classList.contains("scroll-active")) {
+                analysisSection.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+                timeoutId = setTimeout(() => {
+                    analysisSection.classList.remove("scroll-active");
+                }, 300);
+            }
+        }
+    });
+}
+
+
+
+
+</script>
+
+</body>
+</html>

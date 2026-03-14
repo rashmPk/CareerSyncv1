@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - CareerSync</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="top-navbar">
+    <div class="nav-left">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    </div>
+
+    <div class="nav-center">
+        <img src="{{ url_for('static', filename='careersync_logo.png') }}" alt="CareerSync Logo" class="nav-logo">
+    </div>
+
+    <div class="nav-right">
+        <button class="support-btn">Support</button>
+    </div>
+</div>
+
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <img src="{{ url_for('static', filename='careersync_logo.png') }}" class="sidebar-logo">
+        <button class="close-btn" onclick="toggleSidebar()">×</button>
+    </div>
+
+    <a href="/job-matches">Job Match</a>
+    <a href="/applied-jobs">Applied Jobs</a>
+
+    {% if session.get('is_admin') == 1 %}
+    <a href="/admin">Admin</a>
+    {% endif %}
+
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="welcome-box dashboard-welcome">
+   <h1>Welcome {{ session.username }}, let’s get you placed!</h1>
+</div>
+
+{% if error %}
+<div class="error-box">
+    {{ error }}
+</div>
+{% endif %}
+
+<form method="POST" enctype="multipart/form-data" class="dashboard-form" id="jobForm">
+    <h3>Enter Skills</h3>
+    <input type="text" id="skillsInput" name="skills" placeholder="e.g. python, machine learning, sql">
+
+    <br><br>
+
+    <h3>OR Upload Resume (PDF)</h3>
+    <input type="file" id="resumeInput" name="resume" accept=".pdf">
+
+    <br><br>
+
+    <button type="submit">Find Jobs</button>
+</form>
+
+<script>
+
+
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("open");
+}
+
+
+const form = document.getElementById("jobForm");
+const skillsInput = document.getElementById("skillsInput");
+const resumeInput = document.getElementById("resumeInput");
+
+function clearError() {
+    const errorBox = document.querySelector(".error-box");
+    if (errorBox) errorBox.remove();
+}
+
+form.addEventListener("submit", function(e) {
+    const skillsValue = skillsInput.value.trim();
+    const resumeSelected = resumeInput.files.length > 0;
+
+    if (!skillsValue && !resumeSelected) {
+        e.preventDefault();
+
+        let errorBox = document.querySelector(".error-box");
+
+        if (!errorBox) {
+            errorBox = document.createElement("div");
+            errorBox.className = "error-box";
+            form.parentNode.insertBefore(errorBox, form);
+        }
+
+        errorBox.textContent = "Please upload your resume or enter skills.";
+    }
+});
+
+skillsInput.addEventListener("input", clearError);
+resumeInput.addEventListener("change", clearError);
+
+
+
+</script>
+
+</body>
+</html>

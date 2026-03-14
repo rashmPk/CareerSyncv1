@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - CareerSync</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<h1 class="logo-title">
+    <span class="letter logo-c">C</span>
+    <span class="letter">a</span>
+    <span class="letter">r</span>
+    <span class="letter">e</span>
+    <span class="letter">e</span>
+    <span class="letter">r</span>
+    <span class="letter logo-s">S</span>
+    <span class="letter">y</span>
+    <span class="letter">n</span>
+    <span class="letter">c</span>
+</h1>
+
+{% if error %}
+<div class="error-box">
+    {{ error }}
+</div>
+{% endif %}
+
+{% if created_user %}
+<div class="success-box">
+    Account created successfully. Your username is <b>{{ created_user }}</b>. Please log in.
+</div>
+{% endif %}
+
+<form method="POST" class="animated-form login-form-page">
+    <h3>Login</h3>
+
+    <input type="text" name="username" placeholder="Username">
+    <div class="password-wrapper">
+        <input type="password" name="password" id="loginPassword" placeholder="Password">
+        <i class="fa-solid fa-eye toggle-eye" onclick="togglePassword()" id="eyeIcon"></i>
+    </div>
+    <button type="submit">Login</button>
+
+    <p class="auth-switch">
+        Don’t have an account? <a href="/signup">Sign up</a>
+    </p>
+</form>
+
+
+<script>
+function togglePassword() {
+    const password = document.getElementById("loginPassword");
+    const icon = document.getElementById("eyeIcon");
+
+    if (password.type === "password") {
+        password.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    } else {
+        password.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
+}
+
+
+
+</script>
+
+
+</body>
+</html>

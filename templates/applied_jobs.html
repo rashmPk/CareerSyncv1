@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Applied Jobs - CareerSync</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="top-navbar">
+    <div class="nav-left">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    </div>
+
+    <div class="nav-center">
+        <img src="{{ url_for('static', filename='careersync_logo.png') }}" alt="CareerSync Logo" class="nav-logo">
+    </div>
+
+    <div class="nav-right">
+        <button class="support-btn">Support</button>
+    </div>
+</div>
+
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <img src="{{ url_for('static', filename='careersync_logo.png') }}" class="sidebar-logo">
+        <button class="close-btn" onclick="toggleSidebar()">×</button>
+    </div>
+
+    <a href="/job-matches">Job Match</a>
+    <a href="/applied-jobs">Applied Jobs</a>
+
+    {% if session.get('is_admin') == 1 %}
+    <a href="/admin">Admin</a>
+    {% endif %}
+
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="applied-wrapper">
+
+
+
+<div class="tracker-table">
+
+    <div class="tracker-header">
+        <div class="tracker-header-left">Job Applied</div>
+        <div class="tracker-header-right">Status</div>
+    </div>
+
+    {% if jobs_saved %}
+        {% for job in jobs_saved %}
+
+        <div class="tracker-row">
+
+            <!-- LEFT COLUMN -->
+            <div class="tracker-left">
+
+                <h3>{{ job['title'] }}</h3>
+
+                <p><b>Company:</b> {{ job['company'] }}</p>
+                <p><b>Location:</b> {{ job['location'] }}</p>
+
+                {% if job['resume_filename'] %}
+                <a href="{{ url_for('view_resume', filename=job['resume_filename']) }}"
+                   target="_blank"
+                   class="action-btn">
+                    View Resume
+                </a>
+                {% endif %}
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="tracker-right">
+
+                <p class="status-badge">{{ job['status'] }}</p>
+                <p>Applied on: {{ job['created_at'] }}</p>
+
+                {% if job['status'] == 'Applied' %}
+                <div class="pending-message">
+                    Your resume is under review.
+                </div>
+
+                {% elif job['status'] == 'Approved' %}
+                <div class="success-message">
+                    Congratulations! You are approved for interview.
+                    You will hear from the company soon.
+                </div>
+
+                {% elif job['status'] == 'Rejected' %}
+                <div class="reject-message">
+                    Your application was not selected this time.
+                    Please try again.
+                </div>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+    {% else %}
+
+        <p style="padding:20px;">No applications yet.</p>
+
+    {% endif %}
+
+</div>
+
+</div>
+
+
+
+<script>
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("open");
+}
+
+
+
+</script>
+
+
+</body>
+</html>
