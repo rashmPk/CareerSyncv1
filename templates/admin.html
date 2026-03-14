@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel - CareerSync</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="admin-page">
+
+<div class="top-navbar">
+    <div class="nav-left">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+    </div>
+
+    <div class="nav-center">
+        <img src="{{ url_for('static', filename='careersync_logo.png') }}" alt="CareerSync Logo" class="nav-logo">
+    </div>
+
+    <div class="nav-right">
+        <button class="support-btn">Support</button>
+    </div>
+</div>
+
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <img src="{{ url_for('static', filename='careersync_logo.png') }}" class="sidebar-logo">
+        <button class="close-btn" onclick="toggleSidebar()">×</button>
+    </div>
+
+    <a href="/job-matches">Job Match</a>
+    <a href="/applied-jobs">Applied Jobs</a>
+
+    {% if session.get('is_admin') == 1 %}
+    <a href="/admin">Admin</a>
+    {% endif %}
+
+    <a href="/logout">Logout</a>
+</div>
+
+
+<div class="admin-wrapper">
+
+    <h1>Applications Received</h1>
+
+    <div class="admin-table">
+
+        <div class="admin-header">
+            <div>Applicant</div>
+            <div>Job</div>
+            <div>Status</div>
+            <div>Actions</div>
+        </div>
+
+        {% if applications %}
+            {% for app in applications %}
+
+            <div class="admin-row">
+
+                <div>
+                    <b>{{ app['applicant_name'] }}</b>
+                </div>
+
+                <div>
+                    {{ app['title'] }} <br>
+                    <small>{{ app['company'] }}</small>
+                </div>
+
+                <div>
+                    <span class="status-badge">{{ app['status'] }}</span>
+                </div>
+
+                <div class="admin-actions">
+
+                    {% if app['resume_filename'] %}
+                    <a href="{{ url_for('view_resume', filename=app['resume_filename']) }}" target="_blank" class="action-btn">
+                        Resume
+                    </a>
+                    {% endif %}
+
+                    <a href="{{ url_for('approve_application', app_id=app['id']) }}" class="action-btn">
+                        Approve
+                    </a>
+
+                    <a href="{{ url_for('reject_application', app_id=app['id']) }}" class="action-btn">
+                        Reject
+                    </a>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+        {% else %}
+            <p>No applications yet.</p>
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+
+<script>
+function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    sidebar.classList.toggle("open");
+}
+
+
+</script>
+
+
+</body>
+</html>
