@@ -1,0 +1,119 @@
+skill,course,platform,link
+python,Python for Everybody,Coursera,https://coursera.org/python
+machine learning,Machine Learning Specialization,Coursera,https://coursera.org/ml
+deep learning,Deep Learning Specialization,Coursera,https://coursera.org/dl
+sql,SQL for Data Science,Udemy,https://udemy.com/sql
+pandas,Data Analysis with Pandas,DataCamp,https://datacamp.com/pandas
+nlp,NLP with Transformers,HuggingFace,https://huggingface.co/course
+aws,AWS Cloud Practitioner,AWS Training,https://aws.training
+tensorflow,TensorFlow Developer Certificate,Google,https://tensorflow.org
+excel,Excel for Business,Udemy,https://udemy.com/excel
+statistics,Statistics Foundations,Khan Academy,https://khanacademy.org
+data analysis,Data Analysis with Python,freeCodeCamp,https://freecodecamp.org
+powerbi,Power BI Essentials,Microsoft Learn,https://learn.microsoft.com
+tableau,Tableau Fundamentals,Tableau,https://tableau.com
+transformers,Transformers Course,HuggingFace,https://huggingface.co/learn
+pytorch,PyTorch for Deep Learning,Udemy,https://udemy.com/pytorch
+java,Java Programming Masterclass,Udemy,https://udemy.com/java
+algorithms,Algorithms Specialization,Coursera,https://coursera.org/algorithms
+system design,System Design Fundamentals,Educative,https://educative.io
+problem solving,Coding Interview Preparation,LeetCode,https://leetcode.com
+cuda,CUDA Programming,NVIDIA,https://developer.nvidia.com
+docker,Docker for Developers,Udemy,https://udemy.com/docker
+kubernetes,Kubernetes Essentials,Cloud Native Foundation,https://cncf.io
+linux,Linux Fundamentals,edX,https://edx.org/linux
+git,Git Version Control,Codecademy,https://codecademy.com
+react,React Developer Course,Udemy,https://udemy.com/react
+javascript,JavaScript Complete Guide,Udemy,https://udemy.com/javascript
+node.js,NodeJS Backend Development,Coursera,https://coursera.org/node
+c++,C++ Programming Masterclass,Udemy,https://udemy.com/cpp
+matlab,MATLAB for Engineers,Coursera,https://coursera.org/matlab
+robotics,Introduction to Robotics,MIT OpenCourseWare,https://ocw.mit.edu
+autocad,AutoCAD Essentials,Udemy,https://udemy.com/autocad
+solidworks,SolidWorks Complete Course,Udemy,https://udemy.com/solidworks
+thermodynamics,Thermodynamics Fundamentals,edX,https://edx.org
+project management,Project Management Professional Prep,Coursera,https://coursera.org/pmp
+digital marketing,Digital Marketing Specialization,Coursera,https://coursera.org/digital
+seo,SEO Fundamentals,HubSpot Academy,https://academy.hubspot.com
+content marketing,Content Marketing Strategy,HubSpot Academy,https://academy.hubspot.com
+financial analysis,Financial Analysis Fundamentals,Coursera,https://coursera.org/finance
+accounting,Introduction to Accounting,edX,https://edx.org/accounting
+economics,Principles of Economics,Khan Academy,https://khanacademy.org/economics
+supply chain,Supply Chain Management,Coursera,https://coursera.org/supplychain
+manufacturing,Manufacturing Process Fundamentals,edX,https://edx.org/manufacturing
+business analytics,Business Analytics Foundations,Coursera,https://coursera.org/analytics
+cloud computing,Cloud Computing Basics,Coursera,https://coursera.org/cloud
+devops,DevOps Engineering,Udemy,https://udemy.com/devops
+civil engineering,Civil Engineering Basics,Coursera,https://coursera.org/civil
+structural analysis,Structural Analysis Fundamentals,edX,https://edx.org/structural
+geotechnical engineering,Soil Mechanics and Foundations,Udemy,https://udemy.com/geotechnical
+surveying,Surveying Engineering Basics,Coursera,https://coursera.org/surveying
+revit,Autodesk Revit Complete Course,Udemy,https://udemy.com/revit
+staad pro,STAAD Pro Structural Design,Udemy,https://udemy.com/staad
+ansys,ANSYS Simulation Masterclass,Coursera,https://coursera.org/ansys
+catia,CATIA Mechanical Design,Udemy,https://udemy.com/catia
+embedded systems,Embedded Systems Programming,Coursera,https://coursera.org/embedded
+microcontrollers,Microcontroller Fundamentals,edX,https://edx.org/microcontroller
+verilog,Digital Design with Verilog,Udemy,https://udemy.com/verilog
+signal processing,Digital Signal Processing,Coursera,https://coursera.org/dsp
+power systems,Electric Power Systems Engineering,edX,https://edx.org/powersystems
+pcb design,PCB Design Masterclass,Udemy,https://udemy.com/pcb
+aerospace engineering,Aerospace Engineering Basics,Coursera,https://coursera.org/aerospace
+aerodynamics,Fundamentals of Aerodynamics,edX,https://edx.org/aerodynamics
+propulsion systems,Aircraft Propulsion Systems,Udemy,https://udemy.com/propulsion
+avionics,Avionics Systems Engineering,Coursera,https://coursera.org/avionics
+chemical engineering,Chemical Process Engineering,Coursera,https://coursera.org/chemeng
+process engineering,Process Engineering Fundamentals,Udemy,https://udemy.com/process
+biomedical engineering,Biomedical Engineering Introduction,Coursera,https://coursera.org/biomedical
+biomechanics,Biomechanics for Engineers,edX,https://edx.org/biomechanics
+robotics engineering,Robotics Specialization,Coursera,https://coursera.org/robotics
+automation,Industrial Automation Basics,Udemy,https://udemy.com/automation
+control engineering,Control Systems Engineering,Coursera,https://coursera.org/control
+industrial engineering,Industrial Engineering Foundations,edX,https://edx.org/industrial
+operations research,Operations Research Basics,Coursera,https://coursera.org/or
+renewable energy,Renewable Energy Engineering,Coursera,https://coursera.org/renewable
+solar engineering,Solar Energy Systems Design,Udemy,https://udemy.com/solar
+wind energy systems,Wind Energy Engineering,edX,https://edx.org/wind
+electric vehicles,Electric Vehicle Engineering,Coursera,https://coursera.org/ev
+iot,Internet of Things Engineering,Coursera,https://coursera.org/iot
+sensor networks,Wireless Sensor Networks,edX,https://edx.org/wsn
+computer vision,Computer Vision Fundamentals,Coursera,https://coursera.org/cv
+image processing,Digital Image Processing,Udemy,https://udemy.com/imageprocessing
+business management,Fundamentals of Business Management,Coursera,https://coursera.org/business
+business development,Business Development Strategy,Udemy,https://udemy.com/business-development
+product management,Product Management Specialization,Coursera,https://coursera.org/product
+operations management,Operations Management Foundations,edX,https://edx.org/operations
+strategic planning,Strategic Planning and Execution,Coursera,https://coursera.org/strategy
+leadership,Leadership and Management Skills,Coursera,https://coursera.org/leadership
+crm,Customer Relationship Management Basics,HubSpot Academy,https://academy.hubspot.com
+financial modeling,Financial Modeling for Business,Udemy,https://udemy.com/finance
+budget management,Budgeting and Forecasting,Coursera,https://coursera.org/budgeting
+risk assessment,Risk Management Fundamentals,edX,https://edx.org/risk
+investment analysis,Investment Analysis and Portfolio Management,Coursera,https://coursera.org/investment
+branding,Brand Management Strategy,Coursera,https://coursera.org/branding
+public relations,Public Relations Fundamentals,Udemy,https://udemy.com/pr
+corporate strategy,Corporate Strategy Foundations,edX,https://edx.org/strategy
+entrepreneurship,Entrepreneurship Specialization,Coursera,https://coursera.org/startup
+human resource management,Human Resource Management,Coursera,https://coursera.org/hr
+recruitment,Talent Acquisition Fundamentals,Udemy,https://udemy.com/recruitment
+performance management,Performance Management for Managers,edX,https://edx.org/performance
+business intelligence,Business Intelligence and Analytics,Coursera,https://coursera.org/bi
+customer success,Customer Success Management,Udemy,https://udemy.com/customer-success
+account management,Strategic Account Management,Coursera,https://coursera.org/account
+sales forecasting,Sales Forecasting Techniques,Udemy,https://udemy.com/sales
+growth strategy,Growth Strategy Fundamentals,Coursera,https://coursera.org/growth
+business strategy,Business Strategy Foundations,Coursera,https://coursera.org/business-strategy
+market research,Market Research and Consumer Behavior,Udemy,https://udemy.com/market-research
+financial analysis,Financial Analysis Fundamentals,Coursera,https://coursera.org/financial-analysis
+excel,Excel for Business,Udemy,https://udemy.com/excel
+statistics,Statistics Foundations,Khan Academy,https://khanacademy.org/statistics
+business analytics,Business Analytics Specialization,Coursera,https://coursera.org/business-analytics
+communication,Business Communication Skills,Coursera,https://coursera.org/business-communication
+project management,Google Project Management,Coursera,https://coursera.org/professional-certificates/google-project-management
+teamwork,Teamwork Skills for the Workplace,FutureLearn,https://futurelearn.com/teamwork
+strategic planning,Strategic Planning and Execution,Coursera,https://coursera.org/strategic-planning
+competitive analysis,Competitive Strategy and Industry Analysis,edX,https://edx.org/competitive-strategy
+business reporting,Data-Driven Business Reporting,Udemy,https://udemy.com/business-reporting
+kpi reporting,KPI Dashboards and Performance Metrics,Udemy,https://udemy.com/kpi-dashboard
+decision making,Data-Driven Decision Making,Coursera,https://coursera.org/data-driven-decision-making
+stakeholder management,Stakeholder Management Essentials,LinkedIn Learning,https://linkedin.com/learning/stakeholder-management

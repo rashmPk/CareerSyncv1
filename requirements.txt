@@ -1,0 +1,6 @@
+Flask
+pandas
+pdfminer.six
+scikit-learn
+gunicorn
+Werkzeug

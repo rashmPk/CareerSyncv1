@@ -1,0 +1,106 @@
+title,company,skills,location,salary,experience,apply_link
+Data Scientist,Google,"python, machine learning, pandas, sql",Bangalore,1800000,Mid,https://careers.google.com
+Data Scientist,IBM,"python, statistics, sql, data analysis",Remote,1400000,Junior,https://example.com
+Data Scientist,Accenture,"python, machine learning, excel, sql",Hyderabad,1200000,Junior,https://example.com
+Data Scientist,Amazon,"python, machine learning, spark, data analysis",Bangalore,2100000,Senior,https://amazon.jobs
+Data Scientist,Microsoft,"python, statistics, machine learning",Remote,2000000,Mid,https://careers.microsoft.com
+ML Engineer,Amazon,"python, deep learning, pytorch, aws",Bangalore,2000000,Senior,https://amazon.jobs
+ML Engineer,Nvidia,"python, tensorflow, deep learning, cuda",Remote,2200000,Senior,https://example.com
+ML Engineer,Google,"python, machine learning, tensorflow",Bangalore,2100000,Mid,https://careers.google.com
+ML Engineer,Meta,"python, deep learning, pytorch",Remote,2050000,Mid,https://careers.meta.com
+AI Engineer,OpenAI,"python, transformers, deep learning, nlp",Remote,2500000,Senior,https://openai.com/careers
+AI Engineer,Infosys,"python, nlp, machine learning",Bangalore,1600000,Mid,https://example.com
+AI Engineer,TCS,"python, machine learning, nlp",Chennai,1500000,Mid,https://example.com
+Data Analyst,Microsoft,"excel, sql, python, powerbi",Delhi,900000,Junior,https://careers.microsoft.com
+Data Analyst,Deloitte,"excel, sql, tableau, python",Mumbai,850000,Junior,https://example.com
+Data Analyst,Accenture,"excel, sql, data visualization",Hyderabad,800000,Junior,https://example.com
+Software Engineer,Meta,"python, java, algorithms, system design",Remote,2100000,Senior,https://careers.meta.com
+Software Engineer,Google,"java, system design, algorithms",Bangalore,1900000,Mid,https://example.com
+Software Engineer,TCS,"java, sql, problem solving",Chennai,800000,Junior,https://example.com
+Software Engineer,Amazon,"java, algorithms, system design",Bangalore,2000000,Mid,https://amazon.jobs
+Software Engineer,Infosys,"java, problem solving, sql",Bangalore,900000,Junior,https://example.com
+Backend Engineer,Stripe,"node.js, docker, kubernetes",Remote,2300000,Senior,https://example.com
+Backend Engineer,PayPal,"java, spring, sql",Remote,2000000,Mid,https://example.com
+Frontend Developer,Adobe,"react, javascript, css",Remote,1500000,Mid,https://example.com
+Frontend Developer,Flipkart,"react, javascript, git",Bangalore,1400000,Mid,https://example.com
+DevOps Engineer,Amazon,"docker, kubernetes, aws",Bangalore,2100000,Senior,https://amazon.jobs
+DevOps Engineer,Google,"kubernetes, docker, cloud computing",Remote,2200000,Senior,https://example.com
+Mechanical Engineer,GE,"autocad, thermodynamics, manufacturing",Bangalore,1100000,Mid,https://example.com
+Mechanical Engineer,Siemens,"solidworks, cad, materials science",Pune,1200000,Mid,https://example.com
+Mechanical Engineer,Bosch,"mechanical design, cad, manufacturing",Bangalore,1150000,Mid,https://example.com
+Robotics Engineer,Boston Dynamics,"robotics, control systems, python",Remote,2300000,Senior,https://example.com
+Robotics Engineer,Tesla,"robotics, matlab, control systems",Remote,2200000,Senior,https://example.com
+Manufacturing Engineer,Toyota,"manufacturing, quality control",Chennai,1000000,Mid,https://example.com
+Manufacturing Engineer,Ford,"manufacturing, process optimization",Chennai,1050000,Mid,https://example.com
+Business Analyst,McKinsey,"business analytics, financial analysis",Mumbai,2000000,Mid,https://example.com
+Business Analyst,BCG,"business strategy, market research",Delhi,2100000,Mid,https://example.com
+Business Analyst,Deloitte,"excel, financial analysis, statistics",Mumbai,1500000,Junior,https://example.com
+Marketing Manager,Unilever,"digital marketing, seo, advertising",Mumbai,1400000,Mid,https://example.com
+Marketing Manager,P&G,"content marketing, digital marketing",Delhi,1450000,Mid,https://example.com
+Sales Manager,Salesforce,"sales, negotiation, crm",Remote,1600000,Mid,https://example.com
+Sales Manager,HubSpot,"sales, communication, lead generation",Remote,1500000,Mid,https://example.com
+Finance Analyst,Goldman Sachs,"financial analysis, accounting",Mumbai,2000000,Mid,https://example.com
+Finance Analyst,JPMorgan,"financial analysis, economics",Mumbai,1950000,Mid,https://example.com
+Operations Manager,Amazon,"operations management, supply chain",Bangalore,1700000,Mid,https://amazon.jobs
+Operations Manager,Flipkart,"operations management, project management",Bangalore,1650000,Mid,https://example.com
+Civil Engineer,L&T,"civil engineering, structural analysis, surveying",Mumbai,1100000,Mid,https://example.com
+Civil Engineer,Afcons,"civil engineering, hydrology, geotechnical engineering",Delhi,1200000,Mid,https://example.com
+Structural Engineer,AECOM,"structural design, staad pro, revit",Bangalore,1400000,Senior,https://example.com
+Structural Engineer,Arup,"structural analysis, ansys, cad",Remote,1500000,Senior,https://example.com
+Electrical Engineer,Siemens,"circuit design, power systems, electronics",Pune,1300000,Mid,https://example.com
+Electrical Engineer,ABB,"power systems, signal processing, pcb design",Bangalore,1350000,Mid,https://example.com
+Embedded Systems Engineer,Intel,"embedded systems, microcontrollers, c++",Bangalore,1700000,Mid,https://example.com
+Embedded Systems Engineer,Qualcomm,"embedded systems, electronics, pcb design",Hyderabad,1800000,Senior,https://example.com
+Electronics Engineer,Texas Instruments,"circuit design, signal processing, electronics",Remote,1750000,Mid,https://example.com
+Robotics Engineer,Boston Dynamics,"robotics, control engineering, python",Remote,2300000,Senior,https://example.com
+Robotics Engineer,Fanuc,"robotics engineering, automation, control systems",Tokyo,2200000,Senior,https://example.com
+Automation Engineer,Siemens,"automation, plc, control engineering",Pune,1500000,Mid,https://example.com
+Aerospace Engineer,Boeing,"aerospace engineering, aerodynamics, propulsion systems",Remote,2400000,Senior,https://example.com
+Aerospace Engineer,Airbus,"aerospace engineering, avionics, flight dynamics",France,2500000,Senior,https://example.com
+Chemical Engineer,BASF,"chemical engineering, process engineering",Mumbai,1500000,Mid,https://example.com
+Chemical Engineer,Dow Chemicals,"reaction engineering, process optimization",Remote,1550000,Mid,https://example.com
+Biomedical Engineer,Medtronic,"biomedical engineering, medical imaging",Remote,1700000,Mid,https://example.com
+Biomedical Engineer,Philips,"biomedical engineering, biomechanics",Bangalore,1600000,Mid,https://example.com
+Industrial Engineer,Toyota,"industrial engineering, production planning",Chennai,1400000,Mid,https://example.com
+Industrial Engineer,Bosch,"operations research, logistics",Bangalore,1450000,Mid,https://example.com
+Renewable Energy Engineer,Tesla,"renewable energy, battery technology, electric vehicles",Remote,2100000,Senior,https://example.com
+Solar Engineer,Vestas,"solar engineering, renewable energy",Delhi,1500000,Mid,https://example.com
+IoT Engineer,Cisco,"iot, sensor networks, python",Bangalore,1800000,Mid,https://example.com
+IoT Engineer,Intel,"iot, embedded systems, edge computing",Bangalore,1900000,Senior,https://example.com
+Computer Vision Engineer,Nvidia,"computer vision, python, deep learning",Remote,2300000,Senior,https://example.com
+Image Processing Engineer,Adobe,"image processing, computer vision",Remote,2100000,Senior,https://example.com
+Business Analyst,McKinsey,"business analytics, financial analysis, market research",Mumbai,2000000,Mid,https://example.com
+Business Analyst,BCG,"business strategy, competitive analysis, data analysis",Delhi,2100000,Mid,https://example.com
+Business Analyst,Deloitte,"excel, statistics, financial analysis",Mumbai,1500000,Junior,https://example.com
+Product Manager,Google,"product management, market research, leadership",Bangalore,2800000,Senior,https://careers.google.com
+Product Manager,Amazon,"product management, business strategy, analytics",Bangalore,2600000,Senior,https://amazon.jobs
+Product Manager,Flipkart,"product management, strategic planning, data analysis",Bangalore,2200000,Mid,https://example.com
+Operations Manager,Amazon,"operations management, supply chain management, leadership",Bangalore,2000000,Mid,https://amazon.jobs
+Operations Manager,Flipkart,"logistics management, operations management",Bangalore,1800000,Mid,https://example.com
+Sales Manager,Salesforce,"sales, negotiation, customer relationship management",Remote,1800000,Mid,https://example.com
+Sales Manager,HubSpot,"sales forecasting, lead generation, communication",Remote,1700000,Mid,https://example.com
+Marketing Manager,Unilever,"branding, digital marketing, advertising",Mumbai,1600000,Mid,https://example.com
+Marketing Manager,P&G,"marketing strategy, content marketing",Delhi,1650000,Mid,https://example.com
+HR Manager,Infosys,"human resource management, recruitment, talent management",Bangalore,1500000,Mid,https://example.com
+HR Manager,TCS,"recruitment, performance management",Chennai,1450000,Mid,https://example.com
+Finance Manager,Goldman Sachs,"financial modeling, investment analysis, accounting",Mumbai,2600000,Senior,https://example.com
+Finance Manager,JPMorgan,"financial analysis, risk assessment",Mumbai,2400000,Senior,https://example.com
+Startup Consultant,YCombinator,"startup strategy, entrepreneurship, venture capital",Remote,2300000,Senior,https://example.com
+Growth Manager,Stripe,"growth strategy, business analytics, marketing",Remote,2100000,Mid,https://example.com
+Customer Success Manager,HubSpot,"customer success, crm, communication",Remote,1700000,Mid,https://example.com
+Account Manager,Microsoft,"account management, negotiation, communication",Delhi,1800000,Mid,https://careers.microsoft.com
+Business Analyst,Deloitte,"business strategy, market research, financial analysis, excel, statistics",Mumbai,1500000,Mid,https://example.com
+Business Analyst,McKinsey,"business analytics, financial analysis, market research, strategic planning",Mumbai,2000000,Mid,https://example.com
+Business Analyst,BCG,"business strategy, competitive analysis, communication, project management",Delhi,2100000,Mid,https://example.com
+Business Analyst,KPMG,"excel, financial analysis, business analytics, communication",Bangalore,1450000,Mid,https://example.com
+Strategy Analyst,Accenture,"strategic planning, market research, business strategy, teamwork",Hyderabad,1600000,Mid,https://example.com
+Strategy Analyst,EY,"business strategy, market research, project management, communication",Mumbai,1650000,Mid,https://example.com
+Operations Analyst,Amazon,"excel, statistics, business analytics, project management",Bangalore,1550000,Mid,https://amazon.jobs
+Operations Analyst,Flipkart,"excel, business analytics, teamwork, communication",Bangalore,1450000,Mid,https://example.com
+Financial Analyst,JPMorgan,"financial analysis, excel, statistics, communication",Mumbai,1900000,Mid,https://example.com
+Financial Analyst,Goldman Sachs,"financial analysis, excel, business analytics, strategic planning",Mumbai,2000000,Mid,https://example.com
+Market Research Analyst,Nielsen,"market research, communication, excel, statistics",Remote,1300000,Mid,https://example.com
+Market Research Analyst,Kantar,"market research, business strategy, communication, teamwork",Mumbai,1250000,Mid,https://example.com
+Business Operations Associate,Uber,"business analytics, project management, communication, teamwork",Bangalore,1400000,Mid,https://example.com
+Business Operations Associate,Swiggy,"excel, business analytics, strategic planning, teamwork",Bangalore,1350000,Mid,https://example.com
+Product Analyst,Razorpay,"business analytics, statistics, excel, project management",Bangalore,1700000,Mid,https://example.com
